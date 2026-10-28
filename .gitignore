@@ -1,0 +1,4 @@
+/versions/*/packages/
+/artifacts/
+/.staging/
+/.release-lock/

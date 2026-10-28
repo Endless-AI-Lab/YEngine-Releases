@@ -1,0 +1,9 @@
+{
+  "name": "@yweb/room-bootstrap",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "@yweb/room": "0.1.0"
+  }
+}
