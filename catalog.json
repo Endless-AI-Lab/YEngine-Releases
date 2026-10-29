@@ -3,20 +3,6 @@
   "latest": "room-0.1.0-198a093d24046045",
   "releases": [
     {
-      "releaseId": "room-0.1.0-987d42dc67551ad7",
-      "sdkVersion": "0.1.0",
-      "protocol": 3,
-      "contentDigest": "987d42dc67551ad7dc1d403fb08891c565ee5b4c28a50f4461606d9d5549947f",
-      "source": {
-        "revision": "bd902393d099a62be4432671bfad61dbae1db8b5",
-        "dirty": true
-      },
-      "manifest": "versions/room-0.1.0-987d42dc67551ad7/release.json",
-      "archive": "artifacts/room-0.1.0-987d42dc67551ad7.tgz",
-      "archiveSha256": "908a0ce4bc5321cd1b98c5b184309a9ff9a159cb50d8ca4fbadf5bb5e807170c",
-      "acceptedAt": "2026-10-28T15:27:52.852Z"
-    },
-    {
       "releaseId": "room-0.1.0-198a093d24046045",
       "sdkVersion": "0.1.0",
       "protocol": 3,

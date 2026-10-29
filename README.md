@@ -9,8 +9,9 @@ release contains the Room SDK, CLI, prebuilt Viewer, project templates and the
 Select a release from [catalog.json](catalog.json). The catalog records the release
 ID, package versions and SHA-256 of its complete archive.
 
-Obtain the matching complete `.tgz` archive from your release provider and extract
-it. The archive contains a `package/` directory with `install.mjs`, `release.json`,
+Download the matching complete `.tgz` attachment from the
+[GitHub Releases page](https://github.com/Endless-AI-Lab/YEngine-Releases/releases/latest)
+and extract it. Do not select GitHub's automatically generated Source code archives. The archive contains a `package/` directory with `install.mjs`, `release.json`,
 `packages/`, `bootstrap/` and `skills/`.
 
 This Git repository stores version manifests, installation instructions and skills.
