@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 2,
+  "identityVersion": 2,
+  "kind": "full",
+  "protocol": 3,
+  "sdkVersion": "0.1.1",
+  "source": {
+    "revision": "9ca8f098204b3984641f703296971c3c4707b481",
+    "dirty": false
+  },
+  "packages": [
+    {
+      "name": "@yweb/engine-animation",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-animation-0.1.0-265febd1c2d62ee8.tgz",
+      "sha256": "265febd1c2d62ee8a0b43904c53386317064bf5644eaee1f9ad91dac3d40c4d1",
+      "integrity": "sha512-s13JGrYjKU2CBJW5HGnIwkQQGihwBlA/4w9Ep1SzBKB7g6WMgWQ18NI8NsykbtQeRiX1lPsqtte8CMbbeRc9Pg==",
+      "files": 36
+    },
+    {
+      "name": "@yweb/engine-core",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-core-0.1.0-54e1c294ab3fbd65.tgz",
+      "sha256": "54e1c294ab3fbd65bd89196033d38972a122f2604d7fc258f0b0522fee433982",
+      "integrity": "sha512-PfeR8VFPq3ikymXknA8s+HpEgFHYxTnFsN366t874DAHQFh1I/aiUdA/rIrHxZBtVcu3ZSlnewpGja+1P1GNwA==",
+      "files": 25
+    },
+    {
+      "name": "@yweb/engine-host",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-host-0.1.0-a466ac058a3c455f.tgz",
+      "sha256": "a466ac058a3c455fba972ef2651bcb56229681d1d85375ab0624cd2833ec8d62",
+      "integrity": "sha512-g+OdaQwoUrhqeSdJu0vi5kqVOKM087R5Cyp+TrEyzDt6atwBmR6i6Vyi5qYEmQcVuWR3Ujo2t9jR0D+AP2bCWQ==",
+      "files": 7
+    },
+    {
+      "name": "@yweb/engine-kinematics",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-kinematics-0.1.0-a13b11e32cb419b0.tgz",
+      "sha256": "a13b11e32cb419b0b9bca6ebb436d5a408439a685cd7b8d4f9fad0c7f4e50bcb",
+      "integrity": "sha512-ZMenOd7JLc6mgXBl61/Wy4mp+hG6A9dWAJCFJpZdZNFZh3gQrl0PQs1bu1zyq3eJi68nM8q7FVO9LpU7jdYjHw==",
+      "files": 4
+    },
+    {
+      "name": "@yweb/engine-kinetree-controls",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-kinetree-controls-0.1.0-20aa3f8aa6d81d63.tgz",
+      "sha256": "20aa3f8aa6d81d63d41b9e72744e608d7dbd9964588fc2c2c883eb44ebcfa712",
+      "integrity": "sha512-oVt+Wl+cOWD3Ef61kGeXtILLHSAmGYb2X5wO3SKgwABvVj0GHerPnOdYVm6ubnnQ1RE/8YkkvVsOV4IHC8R7Xg==",
+      "files": 10
+    },
+    {
+      "name": "@yweb/engine-physics",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-physics-0.1.0-ddb8b87d0d5a4620.tgz",
+      "sha256": "ddb8b87d0d5a4620c30880967d2594bb8978ec05f961b6c35c55960f5f0855b5",
+      "integrity": "sha512-l6lvQX2pP/CVgC70cvoRrrk2MmSPw96tFhsnuzCt2+QxJclXFypaaKIasdyEzyt7EiX4tU1OVE0wJqU/aaG3CQ==",
+      "files": 18
+    },
+    {
+      "name": "@yweb/engine-physics-jolt",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-physics-jolt-0.1.0-f0e4bc9c6746c2dd.tgz",
+      "sha256": "f0e4bc9c6746c2dd77289219c3a345dab00618d2364c32db68b1f8aa17276026",
+      "integrity": "sha512-tTfGsWGG3edK5S3pWsnKSqdhF3Yrv+jqiu2vaPZPMpWWmii9lFetL7YomuRReM56PubLXxZZxLJskRTSFjaKHw==",
+      "files": 21
+    },
+    {
+      "name": "@yweb/engine-react",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-react-0.1.0-2361f50757b48751.tgz",
+      "sha256": "2361f50757b487519dbc5eda8a540b4cbdf46df3533989f0f9259fce2ffe13d5",
+      "integrity": "sha512-GE/vAaoMzm1GzZmGf0D+8A3o+xVL0trBWJoEeh8/cWyVwlZ0NeEoO+q1uj9pRiDOQnBUMEGaIV1/K/o0V1yf5A==",
+      "files": 20
+    },
+    {
+      "name": "@yweb/engine-runtime-ts",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-runtime-ts-0.1.0-40dc8c99147f1f17.tgz",
+      "sha256": "40dc8c99147f1f17673a489eee51d0cff8ebaa85e9c2a5fab772212f120efdc5",
+      "integrity": "sha512-s/4ytRbhy9AP0F45PLRDud6vIdXV5vZgPasK1imPH3m6yg669YucovpHhBhNScv7Bvc7k4YCWB3RQFBL8cj73A==",
+      "files": 32
+    },
+    {
+      "name": "@yweb/engine-three",
+      "version": "0.1.0",
+      "file": "packages/yweb-engine-three-0.1.0-ee806e5c384b1318.tgz",
+      "sha256": "ee806e5c384b13183b705eacf33969d501ba8f85645416688ed8c07a2c7723aa",
+      "integrity": "sha512-e+YEVe5HZLjqlvQVk9M+/EFmEJY+Vx6mNudd53J1p6H49Six0VsP8SW6Jl75Eoh2VCHM/cU9aju5bFYEsBIyXw==",
+      "files": 16
+    },
+    {
+      "name": "@yweb/room",
+      "version": "0.1.1",
+      "file": "packages/yweb-room-0.1.1-783e3dfc89fbd99d.tgz",
+      "sha256": "783e3dfc89fbd99d462c403e3532faa79afb370ceb883c36e6074f7bb58e9396",
+      "integrity": "sha512-oSAFLnQYMwtG1qO9Qudpq5yuTPkvUGg4SoGvZsdwMNsVHGHqcJypxUy3Ej6XO8aqS4wSO8JSX+7h31l5LJpMHQ==",
+      "files": 64
+    },
+    {
+      "name": "@yweb/room-cli",
+      "version": "0.1.1",
+      "file": "packages/yweb-room-cli-0.1.1-740a0a2859a84a40.tgz",
+      "sha256": "740a0a2859a84a404f4e5f16808854928353aa0050dc4d5d7a2228fc628791b6",
+      "integrity": "sha512-lOippJQcZd6dk0cC8eji26MyfR3a4D2o9WOi5GYlois42fmly0W3bA+BvIRDqnwKnwyJINE0OwuByMZSY7+IWw==",
+      "files": 183
+    },
+    {
+      "name": "@yweb/room-react",
+      "version": "0.1.1",
+      "file": "packages/yweb-room-react-0.1.1-454a643550c1caeb.tgz",
+      "sha256": "454a643550c1caeb1becd9ee17e2292235d3bbfc8770eae1eb388223bb1a8ebd",
+      "integrity": "sha512-8c0p8SBQ7gLJOErfLLP024KH7V1T5oYcC25/8FzDGfvVD485qIjv7TJht0EJIYxpi5sZQVYr3BVJbZj9bLVPyQ==",
+      "files": 24
+    }
+  ],
+  "skills": [
+    {
+      "name": "scan-to-yengine",
+      "protocol": 3,
+      "files": [
+        {
+          "path": "skills/scan-to-yengine/SKILL.md",
+          "sha256": "81ee90b695fd1354e050d26ce57af01b8afce9dbfa2c5dc076a4429d0c3825be",
+          "size": 9396
+        },
+        {
+          "path": "skills/scan-to-yengine/UPSTREAM-LICENSE",
+          "sha256": "7b41d61a4569d103d9968cbb246c9e489ae14797b171d26ef47825a040c958b4",
+          "size": 1148
+        },
+        {
+          "path": "skills/scan-to-yengine/assets/BRIEF.example.md",
+          "sha256": "e84a32e34dbe646d5a0fcc182497fac8d901377ec12d49bfd24562680f8a71fd",
+          "size": 3401
+        },
+        {
+          "path": "skills/scan-to-yengine/assets/room-template.ts",
+          "sha256": "74e9f4d1c680dfe2dbd92b1c8bf3cf87d568f624371be7b60f2a800db79f4baa",
+          "size": 1301
+        },
+        {
+          "path": "skills/scan-to-yengine/assets/room-template.tsx",
+          "sha256": "d94a37431b59f90da07713a05200ab956a08ee1deb59a45c9714c9d6ad247bcd",
+          "size": 1283
+        },
+        {
+          "path": "skills/scan-to-yengine/provenance.json",
+          "sha256": "0476dfe07d70ec1dea345d66b3220e636db2ae4c552c0a89cddc3fbfa499756d",
+          "size": 1983
+        },
+        {
+          "path": "skills/scan-to-yengine/references/advanced-modeling.md",
+          "sha256": "778115050a904723876002632b3066fd3c576122ccfafc3aa83e5d4bbefb0713",
+          "size": 17321
+        },
+        {
+          "path": "skills/scan-to-yengine/references/house-capture.md",
+          "sha256": "8960c93594ead21a5a5eb5b19412ddf5262a4aaf9ad9c2f00630ad359027fa56",
+          "size": 16352
+        },
+        {
+          "path": "skills/scan-to-yengine/references/modeling.md",
+          "sha256": "5865d03025b2483c7a86112cca96d28659ade0e973bdadd1e369c8e63be4b7fd",
+          "size": 16142
+        },
+        {
+          "path": "skills/scan-to-yengine/references/project-layout.md",
+          "sha256": "62ed4983364ca6079b8b935784b4e60a89871c9b6f6b113e1aa0aec17c13e3ac",
+          "size": 12239
+        },
+        {
+          "path": "skills/scan-to-yengine/references/room-authoring.md",
+          "sha256": "f75f0d05e0495b4ae5707c079a2288dc2bbc1eec5db2f33a9e373b07357a801d",
+          "size": 25187
+        },
+        {
+          "path": "skills/scan-to-yengine/references/tools.md",
+          "sha256": "7f84909d77d1cc4f3144b760e377bacad23530291a3f2a9207b4eea787970a34",
+          "size": 12399
+        }
+      ]
+    },
+    {
+      "name": "yengine-mechanisms",
+      "protocol": 3,
+      "files": [
+        {
+          "path": "skills/yengine-mechanisms/SKILL.md",
+          "sha256": "5319b1ae418a3085ce2f9fa82a66e0ff0f0cb24226b5e5d537cee90391ed7d63",
+          "size": 8102
+        },
+        {
+          "path": "skills/yengine-mechanisms/provenance.json",
+          "sha256": "1d3deed37d71b7a7fec335dd7148b10482646aae16e61c6ed8128fa91273f9e5",
+          "size": 75
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/advanced-mechanisms.md",
+          "sha256": "72e4d4dca25d06b780e7bc8ea96ac7d96a5c45bfdccd0a17c6e067abd40371a4",
+          "size": 1838
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/authoring.md",
+          "sha256": "94c2698cf4405406aac3450d7629727da345a8e3c7a78e17ae09bbf0bc20eb67",
+          "size": 7326
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/control-bindings.md",
+          "sha256": "3b5f8dc67444710b074ce55d4d1ef219ce391bdc993862fffac75999083e90ab",
+          "size": 5778
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/direct-interaction.md",
+          "sha256": "5aad9d9642df5197127714e99c7b5adb9e001dabaf4faf9b808ab9b9deb02211",
+          "size": 2189
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/tools.md",
+          "sha256": "50bb7ae98b54cd2acf74a4007cd29e00f71c101470a6eeb59702a22b6d68a0d7",
+          "size": 9861
+        },
+        {
+          "path": "skills/yengine-mechanisms/references/validation.md",
+          "sha256": "5989722df081f1002d600baa8dabd25c9933fa086950af9df568dddfee9a6223",
+          "size": 5337
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "bootstrap/examples/mechanism-controls/room.tsx.template",
+      "sha256": "98cc0792e03f48bdda21996f2c246d74ef8dc3a44a8722fecc084464ded86883",
+      "size": 8941
+    },
+    {
+      "path": "bootstrap/examples/mechanism-controls/scenario.json",
+      "sha256": "64c3cd1b818f331262ae9a854a62ec8dfd5a1f8e8f7ff66f8aeecfdaf24151f6",
+      "size": 5671
+    },
+    {
+      "path": "bootstrap/examples/mechanisms/room.tsx.template",
+      "sha256": "5d1359737cc8d70d68448396c5ab01199542d2045181b126ef10846c10e1cd88",
+      "size": 5756
+    },
+    {
+      "path": "bootstrap/examples/mechanisms/scenario.json",
+      "sha256": "747ec82fea3340f13cae1683cd11c67c26d4c89c5f8b65619581a76c37ecd1f7",
+      "size": 3283
+    },
+    {
+      "path": "bootstrap/package.json",
+      "sha256": "487fa133166ba57bb0a8d95fbe9f6dc24d0f068f37a0fcfd57c9cb6da1ae86f3",
+      "size": 149
+    },
+    {
+      "path": "bootstrap/src/init.mjs",
+      "sha256": "ac47b38b8c60dcc5a91ae164c3e0f1b5fe4de6d4b86a42491f903b130d6163e8",
+      "size": 11087
+    },
+    {
+      "path": "bootstrap/src/package-manager.mjs",
+      "sha256": "c076c479c55802fef26384091308a210644cf669432c28b1abb7f6317ef67547",
+      "size": 1541
+    },
+    {
+      "path": "bootstrap/src/release-manifest.mjs",
+      "sha256": "4a800e23083b715dc1c80cbdc4b929f3c19bcf462c49dd43822d32bcc3b2ebea",
+      "size": 8686
+    },
+    {
+      "path": "bootstrap/src/toolchain.mjs",
+      "sha256": "dd30df840aedee0c41df36e8561daab834044fd6048b1cceb74e9fedfaaab50b",
+      "size": 19787
+    },
+    {
+      "path": "install.mjs",
+      "sha256": "37d4d8102d45e0815a14ecadaf49b823770283098bcea7c181cd320f43be9bd5",
+      "size": 2212
+    },
+    {
+      "path": "package.json",
+      "sha256": "04123e1b9923615574b496d5d089dd6032ee3bc55f58591e00840d721c49661f",
+      "size": 218
+    },
+    {
+      "path": "packages/yweb-engine-animation-0.1.0-265febd1c2d62ee8.tgz",
+      "sha256": "265febd1c2d62ee8a0b43904c53386317064bf5644eaee1f9ad91dac3d40c4d1",
+      "size": 42126
+    },
+    {
+      "path": "packages/yweb-engine-core-0.1.0-54e1c294ab3fbd65.tgz",
+      "sha256": "54e1c294ab3fbd65bd89196033d38972a122f2604d7fc258f0b0522fee433982",
+      "size": 13493
+    },
+    {
+      "path": "packages/yweb-engine-host-0.1.0-a466ac058a3c455f.tgz",
+      "sha256": "a466ac058a3c455fba972ef2651bcb56229681d1d85375ab0624cd2833ec8d62",
+      "size": 5136
+    },
+    {
+      "path": "packages/yweb-engine-kinematics-0.1.0-a13b11e32cb419b0.tgz",
+      "sha256": "a13b11e32cb419b0b9bca6ebb436d5a408439a685cd7b8d4f9fad0c7f4e50bcb",
+      "size": 3704
+    },
+    {
+      "path": "packages/yweb-engine-kinetree-controls-0.1.0-20aa3f8aa6d81d63.tgz",
+      "sha256": "20aa3f8aa6d81d63d41b9e72744e608d7dbd9964588fc2c2c883eb44ebcfa712",
+      "size": 11681
+    },
+    {
+      "path": "packages/yweb-engine-physics-0.1.0-ddb8b87d0d5a4620.tgz",
+      "sha256": "ddb8b87d0d5a4620c30880967d2594bb8978ec05f961b6c35c55960f5f0855b5",
+      "size": 20794
+    },
+    {
+      "path": "packages/yweb-engine-physics-jolt-0.1.0-f0e4bc9c6746c2dd.tgz",
+      "sha256": "f0e4bc9c6746c2dd77289219c3a345dab00618d2364c32db68b1f8aa17276026",
+      "size": 42585
+    },
+    {
+      "path": "packages/yweb-engine-react-0.1.0-2361f50757b48751.tgz",
+      "sha256": "2361f50757b487519dbc5eda8a540b4cbdf46df3533989f0f9259fce2ffe13d5",
+      "size": 6916
+    },
+    {
+      "path": "packages/yweb-engine-runtime-ts-0.1.0-40dc8c99147f1f17.tgz",
+      "sha256": "40dc8c99147f1f17673a489eee51d0cff8ebaa85e9c2a5fab772212f120efdc5",
+      "size": 36137
+    },
+    {
+      "path": "packages/yweb-engine-three-0.1.0-ee806e5c384b1318.tgz",
+      "sha256": "ee806e5c384b13183b705eacf33969d501ba8f85645416688ed8c07a2c7723aa",
+      "size": 8037
+    },
+    {
+      "path": "packages/yweb-room-0.1.1-783e3dfc89fbd99d.tgz",
+      "sha256": "783e3dfc89fbd99d462c403e3532faa79afb370ceb883c36e6074f7bb58e9396",
+      "size": 69664
+    },
+    {
+      "path": "packages/yweb-room-cli-0.1.1-740a0a2859a84a40.tgz",
+      "sha256": "740a0a2859a84a404f4e5f16808854928353aa0050dc4d5d7a2228fc628791b6",
+      "size": 3493256
+    },
+    {
+      "path": "packages/yweb-room-react-0.1.1-454a643550c1caeb.tgz",
+      "sha256": "454a643550c1caeb1becd9ee17e2292235d3bbfc8770eae1eb388223bb1a8ebd",
+      "size": 19820
+    },
+    {
+      "path": "README.md",
+      "sha256": "d50f7061c16795d44c30c921fd82aaede912829dd942ec0b2b07a3afb718fc9e",
+      "size": 3432
+    },
+    {
+      "path": "skills/scan-to-yengine/assets/BRIEF.example.md",
+      "sha256": "e84a32e34dbe646d5a0fcc182497fac8d901377ec12d49bfd24562680f8a71fd",
+      "size": 3401
+    },
+    {
+      "path": "skills/scan-to-yengine/assets/room-template.ts",
+      "sha256": "74e9f4d1c680dfe2dbd92b1c8bf3cf87d568f624371be7b60f2a800db79f4baa",
+      "size": 1301
+    },
+    {
+      "path": "skills/scan-to-yengine/assets/room-template.tsx",
+      "sha256": "d94a37431b59f90da07713a05200ab956a08ee1deb59a45c9714c9d6ad247bcd",
+      "size": 1283
+    },
+    {
+      "path": "skills/scan-to-yengine/provenance.json",
+      "sha256": "0476dfe07d70ec1dea345d66b3220e636db2ae4c552c0a89cddc3fbfa499756d",
+      "size": 1983
+    },
+    {
+      "path": "skills/scan-to-yengine/references/advanced-modeling.md",
+      "sha256": "778115050a904723876002632b3066fd3c576122ccfafc3aa83e5d4bbefb0713",
+      "size": 17321
+    },
+    {
+      "path": "skills/scan-to-yengine/references/house-capture.md",
+      "sha256": "8960c93594ead21a5a5eb5b19412ddf5262a4aaf9ad9c2f00630ad359027fa56",
+      "size": 16352
+    },
+    {
+      "path": "skills/scan-to-yengine/references/modeling.md",
+      "sha256": "5865d03025b2483c7a86112cca96d28659ade0e973bdadd1e369c8e63be4b7fd",
+      "size": 16142
+    },
+    {
+      "path": "skills/scan-to-yengine/references/project-layout.md",
+      "sha256": "62ed4983364ca6079b8b935784b4e60a89871c9b6f6b113e1aa0aec17c13e3ac",
+      "size": 12239
+    },
+    {
+      "path": "skills/scan-to-yengine/references/room-authoring.md",
+      "sha256": "f75f0d05e0495b4ae5707c079a2288dc2bbc1eec5db2f33a9e373b07357a801d",
+      "size": 25187
+    },
+    {
+      "path": "skills/scan-to-yengine/references/tools.md",
+      "sha256": "7f84909d77d1cc4f3144b760e377bacad23530291a3f2a9207b4eea787970a34",
+      "size": 12399
+    },
+    {
+      "path": "skills/scan-to-yengine/SKILL.md",
+      "sha256": "81ee90b695fd1354e050d26ce57af01b8afce9dbfa2c5dc076a4429d0c3825be",
+      "size": 9396
+    },
+    {
+      "path": "skills/scan-to-yengine/UPSTREAM-LICENSE",
+      "sha256": "7b41d61a4569d103d9968cbb246c9e489ae14797b171d26ef47825a040c958b4",
+      "size": 1148
+    },
+    {
+      "path": "skills/yengine-mechanisms/provenance.json",
+      "sha256": "1d3deed37d71b7a7fec335dd7148b10482646aae16e61c6ed8128fa91273f9e5",
+      "size": 75
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/advanced-mechanisms.md",
+      "sha256": "72e4d4dca25d06b780e7bc8ea96ac7d96a5c45bfdccd0a17c6e067abd40371a4",
+      "size": 1838
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/authoring.md",
+      "sha256": "94c2698cf4405406aac3450d7629727da345a8e3c7a78e17ae09bbf0bc20eb67",
+      "size": 7326
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/control-bindings.md",
+      "sha256": "3b5f8dc67444710b074ce55d4d1ef219ce391bdc993862fffac75999083e90ab",
+      "size": 5778
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/direct-interaction.md",
+      "sha256": "5aad9d9642df5197127714e99c7b5adb9e001dabaf4faf9b808ab9b9deb02211",
+      "size": 2189
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/tools.md",
+      "sha256": "50bb7ae98b54cd2acf74a4007cd29e00f71c101470a6eeb59702a22b6d68a0d7",
+      "size": 9861
+    },
+    {
+      "path": "skills/yengine-mechanisms/references/validation.md",
+      "sha256": "5989722df081f1002d600baa8dabd25c9933fa086950af9df568dddfee9a6223",
+      "size": 5337
+    },
+    {
+      "path": "skills/yengine-mechanisms/SKILL.md",
+      "sha256": "5319b1ae418a3085ce2f9fa82a66e0ff0f0cb24226b5e5d537cee90391ed7d63",
+      "size": 8102
+    }
+  ],
+  "releaseId": "room-0.1.1-43fbba0e397f8102",
+  "contentDigest": "43fbba0e397f810250d04c39195bb86b1359b90b0cf1059bc223333b62a73835"
+}

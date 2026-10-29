@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "latest": "room-0.1.0-198a093d24046045",
+  "latest": "room-0.1.1-43fbba0e397f8102",
   "releases": [
     {
       "releaseId": "room-0.1.0-198a093d24046045",
@@ -15,6 +15,20 @@
       "archive": "artifacts/room-0.1.0-198a093d24046045.tgz",
       "archiveSha256": "f76db2a265092448a1e540feaa72b9178cbf59e97212446e493d34349f7a7267",
       "acceptedAt": "2026-10-29T09:53:53.568Z"
+    },
+    {
+      "releaseId": "room-0.1.1-43fbba0e397f8102",
+      "sdkVersion": "0.1.1",
+      "protocol": 3,
+      "contentDigest": "43fbba0e397f810250d04c39195bb86b1359b90b0cf1059bc223333b62a73835",
+      "source": {
+        "revision": "9ca8f098204b3984641f703296971c3c4707b481",
+        "dirty": false
+      },
+      "manifest": "versions/room-0.1.1-43fbba0e397f8102/release.json",
+      "archive": "artifacts/room-0.1.1-43fbba0e397f8102.tgz",
+      "archiveSha256": "a5e145e292439f327f509d474010eab65979ec0ed89fd63e668bc339e9c2be5d",
+      "acceptedAt": "2026-10-29T14:06:30.169Z"
     }
   ]
 }

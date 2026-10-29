@@ -1,0 +1,178 @@
+import { RoomJoint, RoomObject, type R3FRoomModule } from "@yweb/room-react";
+import { useRoomJointDrag } from "@yweb/room-react/direct-interaction";
+
+const drive = { maxEffort: 40, frequencyHz: 12, dampingRatio: 1 };
+const vertical = [-Math.SQRT1_2, 0, 0, Math.SQRT1_2] as const;
+const identity = [0, 0, 0, 1] as const;
+const drawerParts = [
+  { position: [0, -0.125, 0], halfExtents: [0.45, 0.025, 0.3] },
+  { position: [-0.425, 0.025, 0], halfExtents: [0.025, 0.125, 0.3] },
+  { position: [0.425, 0.025, 0], halfExtents: [0.025, 0.125, 0.3] },
+  { position: [0, 0.025, -0.275], halfExtents: [0.4, 0.125, 0.025] },
+  { position: [0, 0.025, 0.275], halfExtents: [0.4, 0.125, 0.025] },
+] as const;
+
+function MovingParts() {
+  const door = useRoomJointDrag({ joint: "door-hinge", drive });
+  const drawer = useRoomJointDrag({ joint: "drawer-slide", drive });
+  return (
+    <>
+      <RoomObject
+        id="door"
+        position={[-0.98, 1, 0]}
+        body={{
+          motion: "dynamic",
+          mass: 2,
+          shape: { kind: "box", halfExtents: [0.5, 0.8, 0.05] },
+        }}
+      >
+        <mesh {...door} castShadow>
+          <boxGeometry args={[1, 1.6, 0.1]} />
+          <meshStandardMaterial color="#b86f45" />
+        </mesh>
+        <mesh position={[0.35, 0, 0.08]}>
+          <boxGeometry args={[0.04, 0.18, 0.06]} />
+          <meshStandardMaterial color="#ded8cc" />
+        </mesh>
+      </RoomObject>
+      <RoomObject
+        id="drawer"
+        position={[1, 0.8, 0]}
+        body={{
+          motion: "dynamic",
+          mass: 1,
+          shape: {
+            kind: "compound",
+            children: drawerParts.map(({ position, halfExtents }) => ({
+              shape: { kind: "box", halfExtents },
+              pose: { position, rotation: identity },
+            })),
+          },
+        }}
+      >
+        {drawerParts.map(({ position, halfExtents }, index) => (
+          <mesh key={index} position={[...position]} {...drawer} castShadow>
+            <boxGeometry
+              args={[
+                halfExtents[0] * 2,
+                halfExtents[1] * 2,
+                halfExtents[2] * 2,
+              ]}
+            />
+            <meshStandardMaterial color="#577c99" />
+          </mesh>
+        ))}
+      </RoomObject>
+    </>
+  );
+}
+
+const room = {
+  kind: "r3f",
+  id: "mechanism-fixture",
+  label: "Door and drawer",
+  camera: { orbit: [4, 3, 6], target: [0, 0.9, 0] },
+  Component: function Mechanisms() {
+    return (
+      <>
+        <hemisphereLight args={["#ffffff", "#6f7785", 2]} />
+        <directionalLight position={[3, 6, 4]} intensity={3} castShadow />
+        <RoomObject
+          id="floor"
+          position={[0, -0.1, 0]}
+          body={{
+            motion: "static",
+            shape: { kind: "box", halfExtents: [3, 0.1, 2] },
+          }}
+        >
+          <mesh receiveShadow>
+            <boxGeometry args={[6, 0.2, 4]} />
+            <meshStandardMaterial color="#c9c3b7" />
+          </mesh>
+        </RoomObject>
+        <RoomObject
+          id="door-frame"
+          position={[-1.6, 1, 0]}
+          body={{
+            motion: "static",
+            shape: { kind: "box", halfExtents: [0.04, 1, 0.04] },
+          }}
+        >
+          <mesh>
+            <boxGeometry args={[0.08, 2, 0.08]} />
+            <meshStandardMaterial color="#ded8cc" />
+          </mesh>
+          {[-0.55, 0.55].map((y) => (
+            <group key={y}>
+              <mesh position={[0.075, y, 0]}>
+                <boxGeometry args={[0.15, 0.045, 0.04]} />
+                <meshStandardMaterial color="#777b80" metalness={0.65} roughness={0.35} />
+              </mesh>
+              <mesh position={[0.12, y, 0]}>
+                <cylinderGeometry args={[0.026, 0.026, 0.14, 16]} />
+                <meshStandardMaterial color="#a7abb0" metalness={0.65} roughness={0.35} />
+              </mesh>
+            </group>
+          ))}
+        </RoomObject>
+        <RoomObject
+          id="drawer-frame"
+          position={[1, 0.4, 0]}
+          body={{
+            motion: "static",
+            shape: { kind: "box", halfExtents: [0.5, 0.2, 0.35] },
+          }}
+        >
+          <mesh>
+            <boxGeometry args={[1, 0.4, 0.7]} />
+            <meshStandardMaterial color="#ded8cc" />
+          </mesh>
+          {[-0.43, 0.43].map((x) => (
+            <mesh key={x} position={[x, 0.225, 0]}>
+              <boxGeometry args={[0.035, 0.05, 0.6]} />
+              <meshStandardMaterial color="#a7abb0" metalness={0.6} roughness={0.35} />
+            </mesh>
+          ))}
+        </RoomObject>
+        <RoomObject
+          id="drawer-stop"
+          position={[2, 0.8, 0.65]}
+          body={{
+            motion: "static",
+            shape: { kind: "box", halfExtents: [0.5, 0.2, 0.05] },
+          }}
+        >
+          <mesh>
+            <boxGeometry args={[1, 0.4, 0.1]} />
+            <meshStandardMaterial color="#d6a043" />
+          </mesh>
+        </RoomObject>
+        <MovingParts />
+        <RoomJoint
+          id="door-hinge"
+          descriptor={{
+            kind: "hinge",
+            bodyA: "door-frame",
+            bodyB: "door",
+            frameA: { position: [0.12, 0, 0], rotation: vertical },
+            frameB: { position: [-0.5, 0, 0], rotation: vertical },
+            limits: { min: 0, max: 1.4 },
+          }}
+        />
+        <RoomJoint
+          id="drawer-slide"
+          descriptor={{
+            kind: "slider",
+            bodyA: "drawer-frame",
+            bodyB: "drawer",
+            frameA: { position: [0, 0.4, 0], rotation: identity },
+            frameB: { position: [0, 0, 0], rotation: identity },
+            limits: { min: 0, max: 0.5 },
+          }}
+        />
+      </>
+    );
+  },
+} satisfies R3FRoomModule;
+
+export default room;
