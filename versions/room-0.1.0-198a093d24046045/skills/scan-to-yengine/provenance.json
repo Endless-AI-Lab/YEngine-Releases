@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "skill": "scan-to-yengine",
+  "repository": "https://github.com/wesbos/3d-model-anything",
+  "commit": "31b2dc9da3fb541e501f2f0936e55b32afb70ee8",
+  "codeLicense": "MIT; see UPSTREAM-LICENSE",
+  "assetLicense": "Separate upstream ASSETS-LICENSE.md; demo assets are not a general redistributed asset package",
+  "sources": [
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/SKILL.md",
+      "sha256": "44c6056f16b31c807ce8c39ecc45a4313c080cfba26cf22dea763ed02977a31a",
+      "localPaths": [
+        "SKILL.md"
+      ],
+      "migration": "adapted"
+    },
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/references/house-capture.md",
+      "sha256": "9d1e7d8924b9938eb03fa21b2cfeac2328e85f84d6f42e3cd83c9b4b1dd160e3",
+      "localPaths": [
+        "references/house-capture.md"
+      ],
+      "migration": "adapted"
+    },
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/references/modeling.md",
+      "sha256": "16fe595abe611be5b42ea4b4a7968312b651b282b0d4700bd37f1d000c4ead6d",
+      "localPaths": [
+        "references/modeling.md"
+      ],
+      "migration": "adapted"
+    },
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/references/advanced-modeling.md",
+      "sha256": "fc7c2bb9b943d25aa461724cba03bee657ea021fb6602d031dfb7df44b2e5793",
+      "localPaths": [
+        "references/advanced-modeling.md"
+      ],
+      "migration": "adapted"
+    },
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/references/project-layout.md",
+      "sha256": "676a6ce80db5c07b9ea0e7a10e313ff20dd770ed352b6bc5351124d77633b238",
+      "localPaths": [
+        "references/project-layout.md"
+      ],
+      "migration": "adapted"
+    },
+    {
+      "upstreamPath": ".agents/skills/scan-to-threejs/assets/BRIEF.example.md",
+      "sha256": "e5aa9684a9fbae7bb4eaf11faab7b12bddf91ae44a5e2b75eb6b207e0dc40b5d",
+      "localPaths": [
+        "assets/BRIEF.example.md"
+      ],
+      "migration": "adapted"
+    }
+  ]
+}

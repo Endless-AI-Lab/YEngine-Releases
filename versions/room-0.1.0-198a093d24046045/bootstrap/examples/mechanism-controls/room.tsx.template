@@ -1,0 +1,251 @@
+import { RoomJoint, RoomObject, type R3FRoomModule } from "@yweb/room-react";
+import {
+  RoomControl,
+  RoomControlBinding,
+  useRoomButton,
+  useRoomKnob,
+} from "@yweb/room-react/interactions";
+
+const drive = { maxEffort: 40, frequencyHz: 12, dampingRatio: 1 };
+const vertical = [Math.SQRT1_2, 0, 0, Math.SQRT1_2] as const;
+const identity = [0, 0, 0, 1] as const;
+// Five panels leave the front and interior open for the door and stored objects.
+const cabinetParts = [
+  { position: [0, 0, -0.36], halfExtents: [0.04, 0.9, 0.36] },
+  { position: [1.2, 0, -0.36], halfExtents: [0.04, 0.9, 0.36] },
+  { position: [0.6, 0, -0.68], halfExtents: [0.56, 0.9, 0.04] },
+  { position: [0.6, 0.94, -0.36], halfExtents: [0.64, 0.04, 0.36] },
+  { position: [0.6, -0.94, -0.36], halfExtents: [0.64, 0.04, 0.36] },
+] as const;
+const drawerParts = [
+  { position: [0, -0.125, 0], halfExtents: [0.45, 0.025, 0.3] },
+  { position: [-0.425, 0.025, 0], halfExtents: [0.025, 0.125, 0.3] },
+  { position: [0.425, 0.025, 0], halfExtents: [0.025, 0.125, 0.3] },
+  { position: [0, 0.025, -0.275], halfExtents: [0.4, 0.125, 0.025] },
+  { position: [0, 0.025, 0.275], halfExtents: [0.4, 0.125, 0.025] },
+] as const;
+
+function Button() {
+  const press = useRoomButton({ control: "open-button" });
+  return (
+    <RoomObject
+      id="button"
+      position={[0.8, 1, 0.3]}
+      body={{ motion: "dynamic", mass: 0.1, shape: { kind: "box", halfExtents: [0.08, 0.08, 0.02] } }}
+    >
+      <mesh {...press}>
+        <boxGeometry args={[0.16, 0.16, 0.04]} />
+        <meshStandardMaterial color="#dba64f" />
+      </mesh>
+    </RoomObject>
+  );
+}
+
+function KnobAndDrawer() {
+  const turn = useRoomKnob({ control: "drawer-knob" });
+  return (
+    <>
+      <RoomObject
+        id="knob-base"
+        position={[1.8, 1.35, 0.15]}
+        body={{ motion: "static", shape: { kind: "box", halfExtents: [0.18, 0.18, 0.04] } }}
+      >
+        <mesh>
+          <boxGeometry args={[0.36, 0.36, 0.08]} />
+          <meshStandardMaterial color="#ded8cc" />
+        </mesh>
+      </RoomObject>
+      <RoomObject
+        id="knob"
+        position={[1.8, 1.35, 0.35]}
+        body={{ motion: "dynamic", mass: 0.1, shape: { kind: "box", halfExtents: [0.14, 0.14, 0.04] } }}
+      >
+        <mesh {...turn} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.14, 0.14, 0.08, 32]} />
+          <meshStandardMaterial color="#2b5a78" />
+        </mesh>
+        <mesh {...turn} position={[0.075, 0, 0.045]}>
+          <boxGeometry args={[0.1, 0.022, 0.015]} />
+          <meshStandardMaterial color="#e6b856" />
+        </mesh>
+      </RoomObject>
+      <RoomObject
+        id="controlled-drawer-frame"
+        position={[1.8, 0.3, 0]}
+        body={{ motion: "static", shape: { kind: "box", halfExtents: [0.5, 0.2, 0.35] } }}
+      >
+        <mesh>
+          <boxGeometry args={[1, 0.4, 0.7]} />
+          <meshStandardMaterial color="#ded8cc" />
+        </mesh>
+        {[-0.43, 0.43].map((x) => (
+          <mesh key={x} position={[x, 0.225, 0]}>
+            <boxGeometry args={[0.035, 0.05, 0.6]} />
+            <meshStandardMaterial color="#a7abb0" metalness={0.6} roughness={0.35} />
+          </mesh>
+        ))}
+      </RoomObject>
+      <RoomObject
+        id="controlled-drawer"
+        position={[1.8, 0.7, 0]}
+        body={{
+          motion: "dynamic", mass: 1,
+          shape: { kind: "compound", children: drawerParts.map(({ position, halfExtents }) => ({
+            shape: { kind: "box", halfExtents }, pose: { position, rotation: identity },
+          })) },
+        }}
+      >
+        {drawerParts.map(({ position, halfExtents }, index) => (
+          <mesh key={index} position={[...position]}>
+            <boxGeometry args={[halfExtents[0] * 2, halfExtents[1] * 2, halfExtents[2] * 2]} />
+            <meshStandardMaterial color="#577c99" />
+          </mesh>
+        ))}
+      </RoomObject>
+      <RoomObject
+        id="controlled-drawer-stop"
+        position={[3, 0.7, 0.65]}
+        body={{ motion: "static", shape: { kind: "box", halfExtents: [0.5, 0.2, 0.05] } }}
+      >
+        <mesh>
+          <boxGeometry args={[1, 0.4, 0.1]} />
+          <meshStandardMaterial color="#d6a043" />
+        </mesh>
+      </RoomObject>
+      <RoomJoint id="knob-hinge" descriptor={{
+        kind: "hinge", bodyA: "knob-base", bodyB: "knob",
+        frameA: { position: [0, 0, 0.2], rotation: identity },
+        frameB: { position: [0, 0, 0], rotation: identity },
+        limits: { min: 0, max: 1.6 },
+      }} />
+      <RoomJoint id="controlled-drawer-slide" descriptor={{
+        kind: "slider", bodyA: "controlled-drawer-frame", bodyB: "controlled-drawer",
+        frameA: { position: [0, 0.4, 0], rotation: identity },
+        frameB: { position: [0, 0, 0], rotation: identity },
+        limits: { min: 0, max: 0.5 },
+      }} />
+      <RoomControl control={{ id: "drawer-knob", kind: "knob", joint: "knob-hinge", range: [0, 1.6], drive }} />
+      <RoomControlBinding binding={{
+        id: "adjust-drawer", source: { id: "drawer-knob", joint: "knob-hinge" },
+        target: "controlled-drawer-slide", mode: "value", range: [0, 0.5], drive,
+      }} />
+    </>
+  );
+}
+const room = {
+  kind: "r3f",
+  id: "mechanism-fixture",
+  label: "Button opens a door; knob adjusts a drawer",
+  camera: { orbit: [4, 3, 6], target: [0.8, 1, 0] },
+  Component: function MechanismControls() {
+    return (
+      <>
+        <hemisphereLight args={["#ffffff", "#6f7785", 2]} />
+        <directionalLight position={[3, 6, 4]} intensity={3} />
+        <RoomObject
+          id="frame"
+          position={[-0.6, 1, 0]}
+          body={{
+            motion: "static",
+            shape: { kind: "compound", children: cabinetParts.map(({ position, halfExtents }) => ({
+              shape: { kind: "box", halfExtents }, pose: { position, rotation: identity },
+            })) },
+          }}
+        >
+          {cabinetParts.map(({position, halfExtents}, index) => (
+            <mesh key={index} position={[...position]}>
+              <boxGeometry args={[halfExtents[0] * 2, halfExtents[1] * 2, halfExtents[2] * 2]} />
+              <meshStandardMaterial color="#ded8cc" />
+            </mesh>
+          ))}
+          {[-0.55, 0.55].map((y) => (
+            <group key={y}>
+              <mesh position={[0.075, y, 0]}>
+                <boxGeometry args={[0.15, 0.045, 0.04]} />
+                <meshStandardMaterial color="#777b80" metalness={0.65} roughness={0.35} />
+              </mesh>
+              <mesh position={[0.12, y, 0]}>
+                <cylinderGeometry args={[0.026, 0.026, 0.14, 16]} />
+                <meshStandardMaterial color="#a7abb0" metalness={0.65} roughness={0.35} />
+              </mesh>
+            </group>
+          ))}
+        </RoomObject>
+        <RoomObject
+          id="door"
+          position={[0.02, 1, 0]}
+          body={{
+            motion: "dynamic",
+            mass: 2,
+            shape: { kind: "box", halfExtents: [0.5, 0.8, 0.05] },
+          }}
+        >
+          <mesh>
+            <boxGeometry args={[1, 1.6, 0.1]} />
+            <meshStandardMaterial color="#688ba5" />
+          </mesh>
+        </RoomObject>
+        <RoomObject
+          id="button-base"
+          position={[0.8, 1, 0]}
+          body={{
+            motion: "static",
+            shape: { kind: "box", halfExtents: [0.1, 0.1, 0.05] },
+          }}
+        >
+          <mesh>
+            <boxGeometry args={[0.2, 0.2, 0.1]} />
+            <meshStandardMaterial color="#ded8cc" />
+          </mesh>
+        </RoomObject>
+        <Button />
+        <KnobAndDrawer />
+        <RoomJoint
+          id="door-hinge"
+          descriptor={{
+            kind: "hinge",
+            bodyA: "frame",
+            bodyB: "door",
+            frameA: { position: [0.12, 0, 0], rotation: vertical },
+            frameB: { position: [-0.5, 0, 0], rotation: vertical },
+            limits: { min: 0, max: 1.4 },
+          }}
+        />
+        <RoomJoint
+          id="button-slide"
+          descriptor={{
+            kind: "slider",
+            bodyA: "button-base",
+            bodyB: "button",
+            frameA: { position: [0, 0, 0.3], rotation: identity },
+            frameB: { position: [0, 0, 0], rotation: identity },
+            limits: { min: 0, max: 0.08 },
+          }}
+        />
+        <RoomControl
+          control={{
+            id: "open-button",
+            joint: "button-slide",
+            kind: "button",
+            range: [0, 0.08],
+            drive,
+            returnDrive: drive,
+            pressThreshold: 0.8,
+            releaseThreshold: 0.2,
+          }}
+        />
+        <RoomControlBinding
+          binding={{
+            id: "open-door",
+            source: { id: "open-button", joint: "button-slide" },
+            target: "door-hinge",
+            mode: "momentary",
+            range: [0, 1.4],
+            drive,
+          }}
+        />
+      </>
+    );
+  },
+} satisfies R3FRoomModule;
+export default room;

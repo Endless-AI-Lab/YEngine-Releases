@@ -1,0 +1,14 @@
+{
+  "name": "@yweb/room-toolchain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "release.json",
+    "install.mjs",
+    "bootstrap",
+    "packages",
+    "skills",
+    "README.md"
+  ]
+}
